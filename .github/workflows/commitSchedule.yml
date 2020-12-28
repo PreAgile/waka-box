@@ -1,0 +1,17 @@
+name: Update gist with WakaTime stats
+on:
+  schedule:
+    - cron: "10 * * * *"
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Update commitSchedule
+        uses: matchai/waka-box@master
+        with:
+         SHOW_COMMIT: "True"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: 9e088f241b2fda5c00e264f341d5aeed
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
