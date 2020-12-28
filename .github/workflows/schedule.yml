@@ -9,6 +9,8 @@ jobs:
       - uses: actions/checkout@master
       - name: Update Weekly development
         uses: matchai/waka-box@master
+         with:
+         SHOW_COMMIT: "True"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: 0cbf797d992465613ec8528a0e37ffcf
